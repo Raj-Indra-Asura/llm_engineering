@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "provenance": "Synthetic tariff profiles representative of UK I&C electricity contracts",
+  "profiles": {
+    "flat": {
+      "description": "Flat rate tariff",
+      "import_usd_kwh": 0.25,
+      "export_usd_kwh": 0.05,
+      "schedule": null
+    },
+    "tou": {
+      "description": "Time-of-use tariff: peak/off-peak",
+      "export_usd_kwh": 0.05,
+      "schedule": {
+        "peak_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          16,
+          17,
+          18,
+          19
+        ],
+        "peak_import_usd_kwh": 0.4,
+        "offpeak_import_usd_kwh": 0.15
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sentence-transformers
+chromadb
+plotly
+gradio>=5.0,<6.0
+httpx
+pytest
+pytest-asyncio
+pytest-timeout
+python-dotenv
