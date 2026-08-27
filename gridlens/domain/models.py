@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
-from typing import Optional
+from typing import Any
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -102,10 +101,21 @@ class ScenarioComparison(BaseModel):
     summary: str
 
 
+class ScenarioComparisonRequest(BaseModel):
+    base: ScenarioRequest
+    compare: ScenarioRequest
+
+
 class SourceReference(BaseModel):
     doc_id: str
     title: str
     chunk_index: int
     similarity_score: float
     excerpt: str
-    metadata: dict = Field(default_factory=dict)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class ExplainRequest(BaseModel):
+    scenario_id: str
+    question: str
+    result: ScenarioResult
